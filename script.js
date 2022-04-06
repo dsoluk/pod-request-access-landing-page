@@ -11,6 +11,7 @@ function validateEmail() {
         return (true)
     }
         resultObj.style.display = "block";
+        // resultObj.style.position = relative;
         
         return (false)
 }

@@ -1,10 +1,10 @@
 :root {
-    --pale-green: #54E6AF;
-    --dark-grey: #2C344B;
-    --med-grey: #5A668A;
-    --light-grey: #C2CBE5;
-    --white: #FFFFFF;
-    --black: rgba(18, 23, 37, 1);
+  --pale-green: #54e6af;
+  --dark-grey: #2c344b;
+  --med-grey: #5a668a;
+  --light-grey: #c2cbe5;
+  --white: #ffffff;
+  --black: rgba(18, 23, 37, 1);
 }
 
 *,
@@ -26,30 +26,74 @@ h1 {
   padding: 0;
 }
 
-html, body {
-  font-family: 'Chivo', sans-serif;
+html,
+body {
+  font-family: "Chivo", sans-serif;
   font-size: 18px;
   box-sizing: border-box;
   margin: 0;
   min-width: 375px;
   max-width: 1440px;
+
+  background-color: var(--black);
+
+  
+
 }
 
 .page-container {
   width: 100vw;
-  background-color: var(--black);
+  /* background-color: var(--black); */
   background-blend-mode: darken;
+}
+
+@media screen and (min-width: 600px) {
+  .page-container {
+    background-blend-mode: none;
+    /* max-height: 767px; */
+    background-image: url(assets/desktop/bg-pattern-dots.svg);
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: bottom left;
+  /* z-index: 2; */
+  height: 100vh;
+
+  }
 }
 
 picture > img {
   opacity: 0.15;
 }
 
+@media screen and (min-width: 600px) {
+  picture > img {
+    position: absolute;
+    opacity: 1;
+    width: 491px;
+    right: 0;
+  }
+}
 
+.logo-img {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  margin-left: -77.425px;
+  width: 134.85px;
+  height: 56px;
+}
+
+@media screen and (min-width: 600px) {
+  .logo-img {
+    top: 62px;
+    left: 39px;
+    margin: 0;
+  }
+}
 
 .info-box {
   position: absolute;
-  top:38px;
+  top: calc(175px - 24px);
 
   margin: 24px;
 
@@ -59,37 +103,70 @@ picture > img {
   /* align-items: center; */
 }
 
-.logo-img {
-  display: block;
-  margin: 0 auto;
-  width: 134.85px;
-  height: 56px;
+@media screen and (min-width: 600px) {
+  .info-box {
+    display: grid;
+    grid-template-areas: "heading"
+                          "text"
+                          "inputs"
+                          "results"
+                          "hosts";
+    top: calc(258px - 39px);
+    margin: 39px;
+    width: 635px;
+    background-color: var(--black);
+    /* justify-content: left; */
+  }
 }
+
+
 
 p {
   text-align: center;
-  
   font-weight: 400;
-  
 }
 
-p:nth-child(2) {
+@media screen and (min-width: 600px) {
+  p{
+    text-align: left;
+}}
+
+p:nth-child(1) {
   text-transform: uppercase;
   color: var(--pale-green);
-  margin-top: 57px;
   font-size: 26px;
   line-height: 38px;
 }
+
+@media screen and (min-width: 600px) {
+  p:nth-child(1) {
+    grid-area: heading;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top: 93px
+  }
+}  
 
 p span {
   color: var(--white);
 }
 
-p:nth-child(3) {
+p:nth-child(2) {
   font-size: 15px;
   line-height: 25px;
   color: var(--light-grey);
   margin-top: 16px;
+}
+
+@media screen and (min-width: 600px) {
+  p:nth-child(2) {
+  grid-area: text;
+
+    font-size: 18px;
+    line-height: 28px;
+  margin-top: 31px;
+  width: 445px;
+  }
 }
 
 .hosts {
@@ -100,10 +177,27 @@ p:nth-child(3) {
   width: 315px;
   margin: 33px 6px 48px 6px;
 }
+@media screen and (min-width: 600px) {
+  .hosts {
+    grid-area: hosts;
+    width: 564px;
+    bottom: 0;
+    margin: 64px 0px 0px 0px;
+
+    
+  }}
+
 
 .host-img {
   max-height: 15px;
   max-width: 77px;
+}
+
+@media screen and (min-width: 600px) {
+  .host-img {
+    max-height: 29px;
+    max-width: 129px;
+  }
 }
 
 .input-container {
@@ -112,16 +206,18 @@ p:nth-child(3) {
   justify-content: space-between;
   width: auto;
   height: 108px;
-
 }
 
-button {
-  border-radius: 28px;
-  background-color: var(--dark-grey);
-  height: 46px;
-  font-size: 14px;
-  line-height: 28px;
-  border: none;
+@media screen and (min-width: 600px) {
+  .input-container {
+    grid-area: inputs;
+    flex-direction: row;
+    height: 56px;
+    width: 100%;
+    margin-top: 40px;
+    align-items:center;
+
+  }
 }
 
 #email {
@@ -139,18 +235,36 @@ button {
   padding-left: 32px;
 }
 
+@media screen and (min-width: 600px) {
+  #email {
+    height: 56px;
+    width: 427px;
+
+  }
+}
+
 #request-access {
   color: var(--black);
   background-color: var(--pale-green);
-
+  border-radius: 28px;
+  height: 46px;
+  font-size: 14px;
+  line-height: 28px;
+  border: none;
 }
 
-/* classList.toggle("flipCard");
-background: #B3FFE2;
-box-shadow: 0px 25px 20px -20px rgba(84, 230, 175, 0.497913); */
+@media screen and (min-width: 600px) {
+  #request-access {
+    height: 46px;
+    width: 162px;
+    transform: translateX(-217px)
+
+  }
+}
 
 #result {
   display: none;
-  color: #FB3E3E;
+  grid-area: results;
+  color: #fb3e3e;
   font-size: 12px;
 }

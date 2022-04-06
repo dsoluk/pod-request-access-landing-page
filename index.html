@@ -20,21 +20,25 @@
 
   <div class="page-container">
     <picture class="host-container">
-      <source media="(min-width:400px)" srcset="assets/desktop/image-host.jpg">
-      <source media="(min-width:800px)" srcset="assets/tablet/image-host.jpg"> 
+      <source media="(min-width:400px)"
+              srcset="assets/tablet/image-host.jpg"
+              width="491"
+              height="767"
+              loading="lazy">
+      <source media="(min-width:992px)"
+              srcset="assets/desktop/image-host.jpg"> 
       <img src="assets/mobile/image-host.jpg" 
            alt="man with headphones talking into a mike to create a podcast"
            width = "491" height = "767"
            loading = "lazy">
     </picture>
     
-    <div class="info-box">
-      <!-- <div class="logo"> -->
+    <!-- <div class="logo-box"> -->
         <img class="logo-img" src="assets/desktop/logo.svg" 
              alt="pod logo"
              width= "134.85" height="56" loading="lazy">
-      <!-- </div> -->
-
+    <!-- </div> -->
+    <div class="info-box">    
       <p>Publish your podcasts <span>everywhere.</span></p>
 
       <p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
@@ -51,9 +55,9 @@
         <input type="email" id="email" name="email"
                placeholder="Email address"
                required>
-        <div id="result">Oops! Please check your email</div>
         <button type="submit" id="request-access" onclick="validateEmail()">Request Access</button>
       </div>
+      <div id="result">Oops! Please check your email</div>
     </div>
   </div>
 
