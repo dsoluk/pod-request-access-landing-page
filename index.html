@@ -12,13 +12,13 @@
 
   <link rel="stylesheet" href="styles.css">
 
-
+  <script src="script.js" defer></script>
   
   <title>Frontend Mentor | Pod request access landing page</title>
 </head>
 <body>
 
-  <div class="primary-container">
+  <div class="page-container">
     <picture class="host-container">
       <source media="(min-width:400px)" srcset="assets/desktop/image-host.jpg">
       <source media="(min-width:800px)" srcset="assets/tablet/image-host.jpg"> 
@@ -27,23 +27,32 @@
            width = "491" height = "767"
            loading = "lazy">
     </picture>
-  
-    <div>
-      <h1>Publish your podcasts <span>everywhere.</span></h1>
+    
+    <div class="info-box">
+      <!-- <div class="logo"> -->
+        <img class="logo-img" src="assets/desktop/logo.svg" 
+             alt="pod logo"
+             width= "134.85" height="56" loading="lazy">
+      <!-- </div> -->
+
+      <p>Publish your podcasts <span>everywhere.</span></p>
 
       <p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
       Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
         
       <div class="hosts">
-        <img src="assets/desktop/spotify.svg" alt="spotify icon">
-        <img src="assets/desktop/apple-podcast.svg" alt="apple podcasts icon">
-        <img src="assets/desktop/google-podcasts.svg" alt="google podcasts icon">
-        <img src="assets/desktop/pocket-casts.svg" alt="pocket casts icon">
+        <img class="host-img" src="assets/desktop/spotify.svg" alt="spotify icon">
+        <img class="host-img" src="assets/desktop/apple-podcast.svg" alt="apple podcasts icon">
+        <img class="host-img" src="assets/desktop/google-podcasts.svg" alt="google podcasts icon">
+        <img class="host-img" src="assets/desktop/pocket-casts.svg" alt="pocket casts icon">
       </div>
       
       <div class="input-container">
-        <button id="email">Email address</button>
-        <button id="request-access">Request Access</button>
+        <input type="email" id="email" name="email"
+               placeholder="Email address"
+               required>
+        <div id="result">Oops! Please check your email</div>
+        <button type="submit" id="request-access" onclick="validateEmail()">Request Access</button>
       </div>
     </div>
   </div>
