@@ -32,11 +32,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot-mobile.jpg)
+![](screenshot-mobile.jpg)
 
-![](./screenshot-tablet.jpg)
+![](screenshot-tablet.jpg)
 
-![](./screenshot-desktop.jpg)
+![](screenshot-desktop.jpg)
 
 ### Links
 
