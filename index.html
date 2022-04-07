@@ -8,8 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script src="script.js" defer></script>
@@ -18,42 +17,40 @@
 </head>
 <body>
 
-  <div class="page-container">
-
+  <header role="banner">
     <picture class="host-container">
       <source media="(min-width:992px)" srcset="assets/desktop/image-host.jpg">
       <source media="(min-width:465px)" srcset="assets/tablet/image-host.jpg">
-      <img src="assets/mobile/image-host.jpg" alt="man with headphones talking into a mike to create a podcast" style="width:auto;">
+      <img src="assets/mobile/image-host.jpg" alt="" style="width:auto;">
     </picture>
     
     <img class="logo-img" src="assets/desktop/logo.svg" 
-          alt="pod logo"
-          width= "134.85" height="56" loading="lazy">
+          alt="pod company">
+  </header>
 
-    <div class="info-box">    
-      <p>Publish your podcasts <span>everywhere.</span></p>
+  <main class="info-box" role="main">    
+    <h1>Publish your podcasts <span>everywhere.</span></h1>
 
-      <p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
-      Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
-        
-      <div class="hosts">
-        <img class="host-img" src="assets/desktop/spotify.svg" alt="spotify icon">
-        <img class="host-img" src="assets/desktop/apple-podcast.svg" alt="apple podcasts icon">
-        <img class="host-img" src="assets/desktop/google-podcasts.svg" alt="google podcasts icon">
-        <img class="host-img" src="assets/desktop/pocket-casts.svg" alt="pocket casts icon">
-      </div>
+    <p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
+    Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
       
-      <div class="input-container">
-        <input type="email" id="email" name="email"
-               placeholder="Email address"
-               required>
-        <button type="submit" id="request-access" onclick="validateEmail()">Request Access</button>
-      </div>
-
-      <div id="result">Oops! Please check your email</div>
+    <div class="services-container">
+      <img class="service-img" src="assets/desktop/spotify.svg" alt="spotify">
+      <img class="service-img" src="assets/desktop/apple-podcast.svg" alt="apple podcasts">
+      <img class="service-img" src="assets/desktop/google-podcasts.svg" alt="google podcasts">
+      <img class="service-img" src="assets/desktop/pocket-casts.svg" alt="pocket casts">
     </div>
     
-  </div>
+    <form class="email-form" action="#">
+      <input type="text" id="email" name="email"
+             autocomplete="off"
+             placeholder="Email address">
+      <input type="submit" id="request-access" value="Request Access">
+    </form>
+
+    <div id="result">Oops! Please check your email</div>
+  
+  </main>
 
 </body>
 </html>
